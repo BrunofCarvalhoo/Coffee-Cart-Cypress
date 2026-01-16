@@ -1,0 +1,30 @@
+{
+  "name": "coffee-cart-cypress",
+  "version": "1.0.0",
+  "description": "Desafio cypress",
+  "homepage": "https://github.com/BrunofCarvalhoo/Coffee-Cart-Cypress#readme",
+  "bugs": {
+    "url": "https://github.com/BrunofCarvalhoo/Coffee-Cart-Cypress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunofCarvalhoo/Coffee-Cart-Cypress.git"
+  },
+  "license": "ISC",
+  "author": "Bruno",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "cypress-cucumber-preprocessor":{
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/support/step-definition/"
+  },
+
+  "devDependencies": {
+    "cypress": "^15.9.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}
