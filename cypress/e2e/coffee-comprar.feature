@@ -10,5 +10,5 @@ Funcionalidade: Comprar cafe
         E aceitar a oferta
         E validar os itens estao presentes no carrinho com os valores certos
         E remover 1 item do carrinho
-        #Entao realizar o pagamento
-        #E validar a mensagem de sucesso na compra
+        Entao preenche os dados de pagamento
+        E validar a mensagem de sucesso na compra
