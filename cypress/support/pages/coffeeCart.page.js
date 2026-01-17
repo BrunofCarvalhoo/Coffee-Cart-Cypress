@@ -1,19 +1,33 @@
 const CART_PAGE = 'a[href="/cart"]'
-const ITEM_CART = 
+const ITEM_CART = 'ul li'
+const CHECKOUT = '[data-test="checkout"]'
 
 class CoffeeCartPage{
     cartPage(){
         cy.get(CART_PAGE).should('be.visible').click()
     }
-    validarItensCart(){
-        cy.get('.router-link-active').should('have.length',4)
-        cy.contains(ITEM_CART,'(Discounted) Mocha').should('be.visible').and('contain.text', '$4')
-        cy.contains(ITEM_CART,'Americano').should('be.visible').and('contain.text', '$7')
-        cy.contains(ITEM_CART,'Espresso_Con Panna').should('be.visible').and('contain.text', '$14')
-        cy.contains(ITEM_CART,'Cafe_Latte').should('be.visible').and('contain.text', '$16')
+    validarItensCart(){ 
+        cy.get(CART_PAGE).contains('cart (4)').should('be.visible')
+
+        cy.get(ITEM_CART).filter(':visible').contains('(Discounted) Mocha').should('be.visible') 
+        cy.get(ITEM_CART).contains('$4.00').should('be.visible') 
+
+        cy.get(ITEM_CART).filter(':visible').contains('Americano').should('be.visible')
+        cy.get(ITEM_CART).contains('$7.00').should('be.visible') 
+ 
+        cy.get(ITEM_CART).filter(':visible').contains('Espresso Con Panna').should('be.visible')
+        cy.get(ITEM_CART).contains('$14.00').should('be.visible')
+
+        cy.get(ITEM_CART).filter(':visible').contains('Cafe Latte').should('be.visible')
+        cy.get(ITEM_CART).contains('$16.00').should('be.visible')
+
+
+        cy.get(CHECKOUT).should('contain.text', '$41.00')
     } 
 
-
+    removerItemCart(){
+        
+    }
 
 }
 
