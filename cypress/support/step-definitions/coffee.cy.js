@@ -2,7 +2,7 @@ import {Given, When, Then, And} from 'cypress-cucumber-preprocessor/steps'
 import CoffeeMenuPage from '../../support/pages/coffeeMenu.page'
 import CoffeeCartPage from '../../support/pages/coffeeCart.page'
 
-Given('que o usuario estaja na pagina do coffee cart', () =>{
+Given('que o usuario esteja na pagina do coffee cart', () =>{
     cy.visit('/')
 })
 
@@ -18,4 +18,7 @@ And('aceitar a oferta', () => {
 And('validar os itens estao presentes no carrinho com os valores certos', () =>{
     CoffeeCartPage.cartPage()
     CoffeeCartPage.validarItensCart()
+})
+And('remover 1 item do carrinho', () => {
+    CoffeeCartPage.removerItemCart('Americano')
 })

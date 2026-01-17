@@ -25,8 +25,8 @@ class CoffeeCartPage{
         cy.get(CHECKOUT).should('contain.text', '$41.00')
     } 
 
-    removerItemCart(){
-        
+    removerItemCart(nomeCafe){
+        cy.get(`[aria-label="Remove all ${nomeCafe}"]`).should('be.visible').click()
     }
 
 }
