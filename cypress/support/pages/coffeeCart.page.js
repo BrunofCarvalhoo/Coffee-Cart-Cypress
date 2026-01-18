@@ -1,5 +1,5 @@
 const CART_PAGE = 'a[href="/cart"]'
-const ITEM_CART = 'ul li'
+const ITEM_CART = '.list-item'
 const CHECKOUT = '[data-test="checkout"]'
 
 class CoffeeCartPage{
